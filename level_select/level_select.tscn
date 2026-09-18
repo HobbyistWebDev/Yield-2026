@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dl0l0fepoa5u8"]
+
+[ext_resource type="Script" uid="uid://dd6owbxcgw34u" path="res://level_select/level_select.gd" id="1_l7jsa"]
+[ext_resource type="PackedScene" uid="uid://c3fqv0rvm1oas" path="res://level_select/level_tile/LevelTile.tscn" id="2_sv8in"]
+
+[node name="LevelSelect" type="Control" unique_id=549884391]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l7jsa")
+level_tile = ExtResource("2_sv8in")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=2017693583]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 10

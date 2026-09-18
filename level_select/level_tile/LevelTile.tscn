@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c3fqv0rvm1oas"]
+
+[ext_resource type="Script" uid="uid://byye2iguxsbgd" path="res://level_select/level_tile/level_tile.gd" id="1_ff3qf"]
+
+[node name="LevelTile" type="Button" unique_id=371100134]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("1_ff3qf")

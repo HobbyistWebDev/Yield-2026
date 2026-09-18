@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Imported translation files
+*.translation
+
+# Exported game builds / binaries
+*.exe
+*.apk
+*.aab
+*.ipa
+*.dmg
+*.pck
+*.zip
+
+# Local export config containing secret credentials/keystores
+export_presets.cfg
