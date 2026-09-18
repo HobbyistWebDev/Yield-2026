@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 var speed = 2400.0
 var jump_vel = 2400.0
@@ -8,7 +8,7 @@ var yield_timer : float = 0
 #delay direction change to avoid clinging to walls
 var directionChangeBuffer : float = 0 
 
-var direction : int = -1
+var direction : int = 1
 var movement_state : int = 0
 # 0 is run
 # 1 is yield
