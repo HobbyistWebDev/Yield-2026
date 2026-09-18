@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b2jalylkd6y1e"]
+
+[ext_resource type="PackedScene" uid="uid://du138icbtd4t2" path="res://player/player.tscn" id="1_qqr42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17ybg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_17ybg"]
+
+[node name="TestRoom" type="Node" unique_id=1602325645]
+
+[node name="Player" parent="." unique_id=1405235111 instance=ExtResource("1_qqr42")]
+position = Vector2(-13, -964)
+
+[node name="Box" type="StaticBody2D" parent="." unique_id=1746043367]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box" unique_id=1105354433]
+scale = Vector2(320, 32)
+shape = SubResource("RectangleShape2D_17ybg")
+
+[node name="PlaceholderSprite" type="Sprite2D" parent="Box/CollisionShape2D" unique_id=1691107481]
+scale = Vector2(20, 19.75)
+texture = SubResource("PlaceholderTexture2D_17ybg")
+
+[node name="Box2" type="StaticBody2D" parent="." unique_id=638570107]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2" unique_id=1738330585]
+position = Vector2(2900, -1000)
+scale = Vector2(32, 128)
+shape = SubResource("RectangleShape2D_17ybg")
+
+[node name="PlaceholderSprite" type="Sprite2D" parent="Box2/CollisionShape2D" unique_id=411734852]
+scale = Vector2(20, 19.75)
+texture = SubResource("PlaceholderTexture2D_17ybg")
+
+[node name="Box3" type="StaticBody2D" parent="." unique_id=576503459]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box3" unique_id=366123795]
+position = Vector2(-2900, -1000)
+scale = Vector2(32, 128)
+shape = SubResource("RectangleShape2D_17ybg")
+
+[node name="PlaceholderSprite" type="Sprite2D" parent="Box3/CollisionShape2D" unique_id=1141117776]
+scale = Vector2(20, 19.75)
+texture = SubResource("PlaceholderTexture2D_17ybg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1472705754]
+zoom = Vector2(0.1, 0.1)
