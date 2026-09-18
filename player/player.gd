@@ -1,8 +1,9 @@
+class_name Player
 extends CharacterBody2D
 class_name Player
 
-var speed = 2400.0
-var jump_vel = 2400.0
+var speed = 200.0
+var jump_vel = 240.0
 
 var yield_timer : float = 0
 #delay direction change to avoid clinging to walls
@@ -23,9 +24,9 @@ func _process(delta: float) -> void:
 	directionChangeBuffer -= 1 #keep timer going down
 	
 	if nerf_speed:
-		speed = 1200
+		speed = 60
 	else:
-		speed = 2400
+		speed = 200
 	
 
 func _physics_process(delta: float) -> void:
@@ -48,10 +49,10 @@ func _physics_process(delta: float) -> void:
 		elif yield_timer >= 20 and not Input.is_action_pressed("yield"): 
 			if (yield_timer < 40): #arc jump
 				movement_state = 2
-				velocity.y = jump_vel * -1.5
+				velocity.y = jump_vel * -1.25
 			elif (yield_timer < 60): #high jump
 				movement_state = 2
-				velocity.y = jump_vel * -2
+				velocity.y = jump_vel * -1.75
 				nerf_speed = true
 			yield_timer = 0
 		if yield_timer >= 60: #flip
@@ -70,7 +71,6 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("yield") and is_on_floor() and not still_pressing_yield:
 		movement_state = 1
-		print("yielding")
 		still_pressing_yield = true
 			
 	else:
@@ -87,5 +87,3 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	move_and_slide()
-	print(movement_state)
-	print("yield timer:", yield_timer)
