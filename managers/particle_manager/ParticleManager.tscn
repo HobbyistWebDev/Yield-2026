@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bf25yslhdj7jd"]
+
+[ext_resource type="Script" uid="uid://dvb78tdykql4v" path="res://managers/particle_manager/particle_manager.gd" id="1_qw8by"]
+
+[node name="ParticleManager" type="Node" unique_id=1881828683]
+script = ExtResource("1_qw8by")
