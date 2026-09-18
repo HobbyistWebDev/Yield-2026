@@ -11,4 +11,5 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PauseMenu" parent="." unique_id=253255227 instance=ExtResource("1_nb4k0")]
+visible = false
 layout_mode = 1

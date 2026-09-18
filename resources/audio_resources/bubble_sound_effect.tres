@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cu72wl62sifl6"]
+
+[ext_resource type="Script" uid="uid://cnbj3na50sdsh" path="res://resources/audio_resources/sound_effect.gd" id="1_24171"]
+[ext_resource type="AudioStream" uid="uid://b13ush156jhoy" path="res://assets/sounds/bubble.mp3" id="2_w38ef"]
+
+[resource]
+script = ExtResource("1_24171")
+name = &"bubble"
+stream = ExtResource("2_w38ef")
+metadata/_custom_type_script = "uid://cnbj3na50sdsh"
