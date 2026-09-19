@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd6owbxcgw34u" path="res://level_select/level_select.gd" id="1_l7jsa"]
 [ext_resource type="PackedScene" uid="uid://c3fqv0rvm1oas" path="res://level_select/level_tile/LevelTile.tscn" id="2_sv8in"]
+[ext_resource type="Texture2D" uid="uid://ch38tddmkf8ep" path="res://ui/title/level_select_bg.png" id="3_16arb"]
 [ext_resource type="Texture2D" uid="uid://ceauaommy66fi" path="res://assets/sprites/level_button_1.png" id="3_mtmfa"]
 [ext_resource type="Texture2D" uid="uid://c676py3r77vmc" path="res://assets/sprites/level_button_1_focus.png" id="4_d5drp"]
 [ext_resource type="Texture2D" uid="uid://ceb3xoyw78l2i" path="res://assets/sprites/level_button_2.png" id="4_lqw5f"]
@@ -92,6 +93,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l7jsa")
 level_tile = ExtResource("2_sv8in")
+
+[node name="BG" type="TextureRect" parent="." unique_id=225755232]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1280.0
+offset_bottom = 719.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_16arb")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=2017693583]
 layout_mode = 1
