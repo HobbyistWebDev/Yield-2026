@@ -12,12 +12,12 @@ func go_to_level(ind: int):
 	if not bound_check(ind):
 		push_warning("Out of bounds Level Manager!")
 		return
-	get_tree().change_scene_to_file(level_paths[ind])
+	SceneTransition.transition(level_paths[ind])
 	current_level = ind
 
 func go_to_next_level():
 	go_to_level(current_level + 1)
 
 func go_to_main_menu():
-	get_tree().change_scene_to_file(main_menu_path)
+	SceneTransition.transition(main_menu_path)
 	current_level = -1
