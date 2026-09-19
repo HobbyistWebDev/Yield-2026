@@ -54,9 +54,11 @@ yield={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity_vector=Vector2(0, 10)
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
