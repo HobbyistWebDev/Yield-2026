@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://d0ucnnhgbif8m" path="res://managers/audio_manager/audio_manager.gd" id="1_4fkx4"]
 [ext_resource type="Script" uid="uid://cnbj3na50sdsh" path="res://resources/audio_resources/sound_effect.gd" id="2_rp2ad"]
 [ext_resource type="Resource" uid="uid://cu72wl62sifl6" path="res://resources/audio_resources/bubble_sound_effect.tres" id="3_ebsk8"]
+[ext_resource type="Resource" uid="uid://b1qm47jy5g5pf" path="res://resources/audio_resources/mega_jump_sound_effect.tres" id="4_ebsk8"]
+[ext_resource type="Resource" uid="uid://dkqy80l3dur52" path="res://resources/audio_resources/jump_sound_effect.tres" id="5_p4ovy"]
+[ext_resource type="Resource" uid="uid://c4w4j537lranu" path="res://resources/audio_resources/bump.tres" id="6_ipktg"]
 
 [node name="AudioManager" type="Node" unique_id=261972966]
 script = ExtResource("1_4fkx4")
-sounds = Array[ExtResource("2_rp2ad")]([ExtResource("3_ebsk8")])
+sounds = Array[ExtResource("2_rp2ad")]([ExtResource("3_ebsk8"), ExtResource("4_ebsk8"), ExtResource("5_p4ovy"), ExtResource("6_ipktg")])

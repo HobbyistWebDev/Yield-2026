@@ -34,9 +34,11 @@ func _physics_process(delta: float) -> void:
 	if dir == -1:
 		anim_sprite.scale.x = -orig_scale
 	
-	if left_cast.is_colliding():
+	if left_cast.is_colliding() and timer.is_stopped():
+		AudioManager.play("bump")
 		dir = 1
-	if right_cast.is_colliding():
+	if right_cast.is_colliding() and timer.is_stopped():
+		AudioManager.play("bump")
 		dir = -1
 	
 	if is_on_floor():
@@ -79,11 +81,13 @@ func yield_action(rm):
 		velocity.y = mega_jump_vel
 		is_jumping = true
 		anim_sprite.play("mega_jumping")
+		AudioManager.play("mega_jump")
 		return
 	if rm < jump_floor and not rm < 0.01 and not is_jumping:
 		velocity.y = jump_vel
 		is_jumping = true
 		anim_sprite.play("jumping")
+		AudioManager.play("jump")
 		return
 
 func _on_timer_timeout() -> void:

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://b1qm47jy5g5pf"]
+
+[ext_resource type="Script" uid="uid://cnbj3na50sdsh" path="res://resources/audio_resources/sound_effect.gd" id="1_76v0d"]
+[ext_resource type="AudioStream" uid="uid://chskpb3nwaurn" path="res://assets/sounds/mega_jump.wav" id="2_clr3s"]
+
+[resource]
+script = ExtResource("1_76v0d")
+name = &"mega_jump"
+stream = ExtResource("2_clr3s")
+volume_db = -8.0
+metadata/_custom_type_script = "uid://cnbj3na50sdsh"
