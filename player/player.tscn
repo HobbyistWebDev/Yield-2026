@@ -35,6 +35,38 @@ region = Rect2(192, 96, 32, 32)
 atlas = ExtResource("2_rkbax")
 region = Rect2(224, 96, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkbax"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55jnj"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx5ib"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2xo5"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_art4l"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjxoa"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gswnw"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(192, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcnuv"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(224, 128, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ieo8"]
 atlas = ExtResource("2_rkbax")
 region = Rect2(0, 32, 32, 32)
@@ -185,6 +217,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_rkbax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55jnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx5ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2xo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_art4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjxoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gswnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcnuv")
+}],
+"loop": 1,
+"name": &"mega_jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2ieo8")
 }, {
 "duration": 1.0,
@@ -288,8 +349,7 @@ script = ExtResource("1_oul6g")
 position = Vector2(0, -32)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_2h45r")
-animation = &"running"
-frame_progress = 0.90737826
+animation = &"falling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=357362707]
 position = Vector2(-1, 10.5)

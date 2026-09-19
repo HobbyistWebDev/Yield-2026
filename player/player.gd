@@ -5,6 +5,7 @@ class_name Player
 
 var horizontal_speed = 500
 var gravity = 3000
+var braking = 1000
 
 #right = 1 left = -1
 var dir = 1
@@ -20,8 +21,19 @@ var remaining_time: float = 0
 
 @onready var left_cast: RayCast2D = $LeftCast
 @onready var right_cast: RayCast2D = $RightCast
+@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+var orig_scale = 0
+
+func _ready():
+	orig_scale = anim_sprite.scale.x
 
 func _physics_process(delta: float) -> void:
+	if dir == 1:
+		anim_sprite.scale.x = orig_scale
+	if dir == -1:
+		anim_sprite.scale.x = -orig_scale
+	
 	if left_cast.is_colliding():
 		dir = 1
 	if right_cast.is_colliding():
@@ -29,8 +41,15 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		is_jumping = false
+		anim_sprite.play("running")
+		anim_sprite.offset.y = 0
+		
+	if is_jumping:
+		anim_sprite.offset.y = 7
+
+	if not is_on_floor() and is_jumping and velocity.y > 0.1:
+		anim_sprite.play("falling")
 	
-	velocity.x = horizontal_speed * dir
 	velocity.y += gravity * delta
 	if not is_jumping and not is_on_floor() and velocity.y > 1:
 		velocity.x = 0
@@ -44,7 +63,10 @@ func _physics_process(delta: float) -> void:
 		timer.stop()
 
 	if not timer.is_stopped() and not is_jumping:
-		velocity.x = 0
+		velocity.x = move_toward(velocity.x, 0, 1000 * delta)
+		anim_sprite.play("yielding")
+	else:
+		velocity.x = horizontal_speed * dir
 	
 	if do_yield_action:
 		do_yield_action = false
@@ -56,10 +78,12 @@ func yield_action(rm):
 	if rm < mega_jump_floor and not rm < 0.01 and not is_jumping:
 		velocity.y = mega_jump_vel
 		is_jumping = true
+		anim_sprite.play("mega_jumping")
 		return
 	if rm < jump_floor and not rm < 0.01 and not is_jumping:
 		velocity.y = jump_vel
 		is_jumping = true
+		anim_sprite.play("jumping")
 		return
 
 func _on_timer_timeout() -> void:
