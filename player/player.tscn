@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://frghlynbdxs8" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://damcewcp0cs2e" path="res://assets/player_sheet.png" id="2_rkbax"]
+[ext_resource type="PackedScene" uid="uid://c06lrra8dunqy" path="res://particles/run_particle.tscn" id="3_g1dw6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
 atlas = ExtResource("2_rkbax")
@@ -343,13 +344,14 @@ animations = [{
 size = Vector2(32, 39)
 
 [node name="Player" type="CharacterBody2D" unique_id=1405235111]
+z_index = 2
 script = ExtResource("1_oul6g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1141215418]
 position = Vector2(0, -32)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_2h45r")
-animation = &"falling"
+animation = &"running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=357362707]
 position = Vector2(-1, 10.5)
@@ -363,5 +365,9 @@ target_position = Vector2(25, 0)
 
 [node name="LeftCast" type="RayCast2D" parent="." unique_id=1073607770]
 target_position = Vector2(-25, 0)
+
+[node name="RunParticle" parent="." unique_id=1823042640 instance=ExtResource("3_g1dw6")]
+z_index = -1
+position = Vector2(-1, 31)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
