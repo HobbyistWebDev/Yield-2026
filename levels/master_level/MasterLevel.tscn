@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cr3xp5f6rhgio"]
 
 [ext_resource type="PackedScene" uid="uid://7l008prvdxde" path="res://ui/ui.tscn" id="1_elmdv"]
+[ext_resource type="Script" uid="uid://i2ionfi768p3" path="res://game/game_camera.gd" id="2_amo4j"]
 [ext_resource type="TileSet" uid="uid://d0ylwaxdko30f" path="res://assets/tilesets/tileset.tres" id="2_sts6x"]
 [ext_resource type="PackedScene" uid="uid://du138icbtd4t2" path="res://player/player.tscn" id="3_0g0bv"]
 
@@ -10,8 +11,9 @@
 
 [node name="UI" parent="CanvasLayer" unique_id=905749211 instance=ExtResource("1_elmdv")]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1521111467]
+[node name="GameCamera" type="Camera2D" parent="." unique_id=1521111467]
 zoom = Vector2(0.25, 0.25)
+script = ExtResource("2_amo4j")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=454834814]
 tile_set = ExtResource("2_sts6x")

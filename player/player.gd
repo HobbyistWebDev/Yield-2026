@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @onready var timer: Timer = $Timer
+@onready var blood_particle: CPUParticles2D = $BloodParticle
 
 var horizontal_speed = 500
 var gravity = 3000
@@ -24,11 +25,13 @@ var remaining_time: float = 0
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready var run_particle: CPUParticles2D = $RunParticle
+var game_camera: GameCamera
 
 var orig_scale = 0
 
 func _ready():
 	orig_scale = anim_sprite.scale.x
+	game_camera = get_tree().current_scene.get_node("GameCamera")
 
 func _physics_process(delta: float) -> void:
 	if dir == 1:
@@ -91,6 +94,7 @@ func yield_action(rm):
 		is_jumping = true
 		anim_sprite.play("mega_jumping")
 		AudioManager.play("mega_jump")
+		game_camera.shake(0.2)
 		return
 	if rm < jump_floor and not rm < 0.01 and not is_jumping:
 		velocity.y = jump_vel
@@ -104,5 +108,9 @@ func _on_timer_timeout() -> void:
 	remaining_time = 1
 
 func die():
-	print(123)
-	LevelManager.restart_level()
+	blood_particle.emitting = true
+	anim_sprite.visible = false
+	LevelManager.restart_level(1)
+	game_camera.shake(5000)
+	AudioManager.play("death")
+	process_mode = Node.PROCESS_MODE_DISABLED
