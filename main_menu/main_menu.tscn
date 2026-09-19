@@ -1,6 +1,68 @@
 [gd_scene format=3 uid="uid://e066t8wdbjpq"]
 
+[ext_resource type="Texture2D" uid="uid://d35ox2y68ny76" path="res://assets/sprites/start_button.png" id="1_d3a7t"]
 [ext_resource type="Script" uid="uid://ddevkf2dmqnyo" path="res://main_menu/start_button.gd" id="1_oa53l"]
+
+[sub_resource type="Animation" id="Animation_3shxk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bws42"]
+resource_name = "press"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.22531264, 1),
+"update": 0,
+"values": [Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.45062515, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3f7m4"]
+_data = {
+&"RESET": SubResource("Animation_3shxk"),
+&"press": SubResource("Animation_bws42")
+}
 
 [node name="MainMenu" type="Control" unique_id=885405137]
 layout_mode = 3
@@ -17,17 +79,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -185.0
+offset_top = 80.0
+offset_right = -61.0
+offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3, 3)
 
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=599871197]
+[node name="StartButton" type="TextureButton" parent="VBoxContainer" unique_id=1978588729]
+texture_filter = 1
 layout_mode = 2
-text = "START"
+offset_transform_enabled = true
+texture_normal = ExtResource("1_d3a7t")
 script = ExtResource("1_oa53l")
 level_select_path = "uid://dl0l0fepoa5u8"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/StartButton" unique_id=1662601557]
+libraries/ = SubResource("AnimationLibrary_3f7m4")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_pressed"]

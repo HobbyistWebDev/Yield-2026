@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dolh1m8ft5eji"]
+
+[ext_resource type="Script" uid="uid://cee601omqbol" path="res://ui/scene_transition.gd" id="1_1un8b"]
+[ext_resource type="Texture2D" uid="uid://bcjtl0v5qotfq" path="res://assets/sprites/scene_transition.png" id="2_lcbxi"]
+
+[sub_resource type="Animation" id="Animation_26j7i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1158, -1029)]
+}
+
+[sub_resource type="Animation" id="Animation_qi6ri"]
+resource_name = "wipe_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-144, 0), Vector2(1152.0001, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_x0mw7"]
+resource_name = "wipe_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1440.3329, 0.98425895), Vector2(-144, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l38qv"]
+_data = {
+&"RESET": SubResource("Animation_26j7i"),
+&"wipe_in": SubResource("Animation_qi6ri"),
+&"wipe_out": SubResource("Animation_x0mw7")
+}
+
+[node name="SceneTransition" type="Control" unique_id=1156947645]
+z_index = 999
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1un8b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1185244247]
+layout_mode = 0
+offset_left = -1158.0
+offset_top = -1029.0
+offset_right = -1117.9999
+offset_bottom = -1011.0
+scale = Vector2(36, 36)
+texture = ExtResource("2_lcbxi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1500487752]
+libraries/ = SubResource("AnimationLibrary_l38qv")
