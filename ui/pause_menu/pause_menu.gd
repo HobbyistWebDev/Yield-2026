@@ -10,6 +10,7 @@ func activate():
 	Engine.time_scale = 0
 	visible = true
 	activated = true
+	$VBoxContainer/ResumeButton.grab_focus()
 
 func deactivate():
 	Engine.time_scale = 1
@@ -30,3 +31,7 @@ func _on_main_menu_button_pressed() -> void:
 	deactivate()
 	get_tree().change_scene_to_file(main_menu_path)
 	
+
+func _on_restart_button_pressed() -> void:
+	deactivate()
+	get_tree().reload_current_scene()
