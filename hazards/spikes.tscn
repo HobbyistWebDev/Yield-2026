@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ccugtutw1ldgi"]
+
+[ext_resource type="Script" uid="uid://b23673esp6vae" path="res://hazards/hurt_box/hurt_box.gd" id="1_cl46g"]
+[ext_resource type="Texture2D" uid="uid://8wpqg1y87ots" path="res://assets/hazard_sprites/spikes.png" id="2_ootm1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sslmw"]
+size = Vector2(43, 25)
+
+[node name="Spikes" type="Area2D" unique_id=686942527]
+script = ExtResource("1_cl46g")
+metadata/_custom_type_script = "uid://b23673esp6vae"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1820169109]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ootm1")
+offset = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=267540765]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_sslmw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

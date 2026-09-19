@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dyh3yjpk4ghi3"]
+
+[ext_resource type="Script" uid="uid://b23673esp6vae" path="res://hazards/hurt_box/hurt_box.gd" id="1_4m7d2"]
+[ext_resource type="Texture2D" uid="uid://bodlvfernr7ji" path="res://assets/hazard_sprites/acid.png" id="2_b60n0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sslmw"]
+size = Vector2(32, 2)
+
+[node name="Acid" type="Area2D" unique_id=850766622]
+script = ExtResource("1_4m7d2")
+metadata/_custom_type_script = "uid://b23673esp6vae"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=652421856]
+texture = ExtResource("2_b60n0")
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1665670384]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_sslmw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

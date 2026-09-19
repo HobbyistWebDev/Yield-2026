@@ -344,7 +344,7 @@ animations = [{
 size = Vector2(32, 39)
 
 [node name="Player" type="CharacterBody2D" unique_id=1405235111]
-z_index = 2
+z_index = 5
 script = ExtResource("1_oul6g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1141215418]

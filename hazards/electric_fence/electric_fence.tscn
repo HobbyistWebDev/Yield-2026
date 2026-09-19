@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b6sni673i28rb"]
+
+[ext_resource type="Script" uid="uid://bay51r7n66iix" path="res://hazards/electric_fence/electric_fence.gd" id="1_3s2cj"]
+[ext_resource type="Texture2D" uid="uid://bk8pxbyoj2wlk" path="res://assets/hazard_sprites/post.png" id="2_v6dc1"]
+[ext_resource type="PackedScene" uid="uid://vhgwm1jy23c8" path="res://particles/electric_particle.tscn" id="3_v6dc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sslmw"]
+size = Vector2(10, 30)
+
+[node name="ElectricFence" type="Area2D" unique_id=177449114]
+script = ExtResource("1_3s2cj")
+metadata/_custom_type_script = "uid://b23673esp6vae"
+
+[node name="LeftPost" type="Sprite2D" parent="." unique_id=177643099]
+z_index = 4
+scale = Vector2(3, 3)
+texture = ExtResource("2_v6dc1")
+offset = Vector2(0, -10)
+
+[node name="RightPost" type="Sprite2D" parent="." unique_id=376499358]
+z_index = 4
+scale = Vector2(3, 3)
+texture = ExtResource("2_v6dc1")
+offset = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1214526811]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_sslmw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1640575685]
+clip_contents = true
+offset_left = -39.0
+offset_top = -26.0
+offset_right = 1.0
+offset_bottom = 14.0
+color = Color(1, 1, 1, 0)
+
+[node name="left_particle" parent="ColorRect" unique_id=666809722 instance=ExtResource("3_v6dc1")]
+z_index = 3
+position = Vector2(20, 21)
+
+[node name="right_particle" parent="ColorRect" unique_id=688559790 instance=ExtResource("3_v6dc1")]
+z_index = 3
+position = Vector2(21, 22)
+direction = Vector2(-1, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
