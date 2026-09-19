@@ -20,6 +20,8 @@ var mega_jump_vel = -1500
 var do_yield_action = false
 var remaining_time: float = 0
 
+@onready var charge_bar_anim:AnimationPlayer = get_tree().get_first_node_in_group("charge_bar")
+
 @onready var left_cast: RayCast2D = $LeftCast
 @onready var right_cast: RayCast2D = $RightCast
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -70,11 +72,13 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("yield"):
 		timer.start()
+		charge_bar_anim.play("fill")
 
 	if Input.is_action_just_released("yield"):
 		do_yield_action = true
 		remaining_time = timer.time_left
 		timer.stop()
+		charge_bar_anim.play("cancel")
 
 	if not timer.is_stopped() and not is_jumping:
 		velocity.x = move_toward(velocity.x, 0, 1000 * delta)

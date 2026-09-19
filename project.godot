@@ -27,6 +27,10 @@ SceneTransition="*uid://dolh1m8ft5eji"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+charge_bar=""
+
 [input]
 
 pause={
