@@ -29,7 +29,7 @@ func _on_resume_button_pressed() -> void:
 
 func _on_main_menu_button_pressed() -> void:
 	deactivate()
-	get_tree().change_scene_to_file(main_menu_path)
+	LevelManager.go_to_main_menu()
 	
 
 func _on_restart_button_pressed() -> void:

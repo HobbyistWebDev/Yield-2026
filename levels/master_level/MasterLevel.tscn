@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://7l008prvdxde" path="res://ui/ui.tscn" id="1_elmdv"]
 [ext_resource type="TileSet" uid="uid://d0ylwaxdko30f" path="res://assets/tilesets/tileset.tres" id="2_sts6x"]
+[ext_resource type="PackedScene" uid="uid://du138icbtd4t2" path="res://player/player.tscn" id="3_0g0bv"]
 
 [node name="MasterLevel" type="Node2D" unique_id=803879313]
 
@@ -10,6 +11,9 @@
 [node name="UI" parent="CanvasLayer" unique_id=905749211 instance=ExtResource("1_elmdv")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1521111467]
+zoom = Vector2(0.25, 0.25)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=454834814]
 tile_set = ExtResource("2_sts6x")
+
+[node name="Player" parent="." unique_id=1405235111 instance=ExtResource("3_0g0bv")]

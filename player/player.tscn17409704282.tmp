@@ -289,7 +289,7 @@ position = Vector2(0, -32)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_2h45r")
 animation = &"running"
-frame_progress = 0.90737826
+frame_progress = 0.6451082
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=357362707]
 position = Vector2(-1, 10.5)
@@ -297,11 +297,5 @@ shape = SubResource("RectangleShape2D_17ybg")
 
 [node name="Timer" type="Timer" parent="." unique_id=140940971]
 one_shot = true
-
-[node name="RightCast" type="RayCast2D" parent="." unique_id=134590172]
-target_position = Vector2(25, 0)
-
-[node name="LeftCast" type="RayCast2D" parent="." unique_id=1073607770]
-target_position = Vector2(-25, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
