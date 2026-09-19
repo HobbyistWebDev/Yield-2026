@@ -23,6 +23,8 @@ var remaining_time: float = 0
 @onready var right_cast: RayCast2D = $RightCast
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var run_particle: CPUParticles2D = $RunParticle
+
 var orig_scale = 0
 
 func _ready():
@@ -31,8 +33,10 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	if dir == 1:
 		anim_sprite.scale.x = orig_scale
+		run_particle.direction.x = -1
 	if dir == -1:
 		anim_sprite.scale.x = -orig_scale
+		run_particle.direction.x = 1
 	
 	if left_cast.is_colliding() and timer.is_stopped():
 		AudioManager.play("bump")
@@ -45,6 +49,11 @@ func _physics_process(delta: float) -> void:
 		is_jumping = false
 		anim_sprite.play("running")
 		anim_sprite.offset.y = 0
+	
+	if is_on_floor() and timer.is_stopped():
+		run_particle.emitting = true
+	else: 
+		run_particle.emitting = false
 		
 	if is_jumping:
 		anim_sprite.offset.y = 7

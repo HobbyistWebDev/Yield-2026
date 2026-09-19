@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c06lrra8dunqy"]
+
+[ext_resource type="Texture2D" uid="uid://2nd3eojclqy2" path="res://assets/textures/square.png" id="1_24y4e"]
+
+[node name="RunParticle" type="CPUParticles2D" unique_id=1823042640]
+z_index = 1
+amount = 32
+texture = ExtResource("1_24y4e")
+lifetime = 0.5
+direction = Vector2(-1, -50)
+spread = 20.0
+gravity = Vector2(0, 400)
+initial_velocity_min = 86.42
+initial_velocity_max = 246.91
+scale_amount_min = 0.2
+scale_amount_max = 0.3
+color = Color(0.6784314, 0.60784316, 0, 1)
