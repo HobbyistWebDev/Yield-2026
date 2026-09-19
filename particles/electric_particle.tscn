@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://vhgwm1jy23c8"]
+
+[ext_resource type="Texture2D" uid="uid://2nd3eojclqy2" path="res://assets/textures/square.png" id="1_wq101"]
+
+[node name="ElectricParticle" type="CPUParticles2D" unique_id=666809722]
+amount = 32
+texture = ExtResource("1_wq101")
+lifetime = 1.5
+emission_shape = 3
+emission_rect_extents = Vector2(1, 15)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+color = Color(0, 0.9647059, 1, 1)

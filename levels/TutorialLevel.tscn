@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cr3xp5f6rhgio" path="res://levels/master_level/MasterLevel.tscn" id="1_ihuc2"]
 [ext_resource type="FontFile" uid="uid://c4ljisvjplahc" path="res://resources/fonts/Jersey25-Regular.ttf" id="2_a3lk1"]
 [ext_resource type="TileSet" uid="uid://d0ylwaxdko30f" path="res://assets/tilesets/tileset.tres" id="2_qn1vs"]
+[ext_resource type="PackedScene" uid="uid://b6sni673i28rb" path="res://hazards/electric_fence/electric_fence.tscn" id="4_g4abw"]
+[ext_resource type="PackedScene" uid="uid://ccugtutw1ldgi" path="res://hazards/spikes.tscn" id="5_ef08e"]
+[ext_resource type="PackedScene" uid="uid://dyh3yjpk4ghi3" path="res://hazards/acid.tscn" id="6_uq0ek"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ihuc2"]
 font = ExtResource("2_a3lk1")
@@ -25,6 +28,7 @@ tile_map_data = PackedByteArray("AADF//7/AQAJAAYAAADG//7/AQAJAAYAAADE//7/AQAJAAY
 tile_set = ExtResource("2_qn1vs")
 
 [node name="Player" parent="." index="4" unique_id=1405235111]
+z_index = 0
 position = Vector2(-1830, -88)
 
 [node name="Label" type="Label" parent="." index="5" unique_id=269084962]
@@ -38,3 +42,14 @@ text = "Welcome to Blinky's!
 Hold [SPACE] to jump; press longer to jump higher
 and turn around!"
 label_settings = SubResource("LabelSettings_ihuc2")
+
+[node name="ElectricFence" parent="." index="6" unique_id=177449114 instance=ExtResource("4_g4abw")]
+position = Vector2(-548, 79)
+length = 150
+
+[node name="Spikes" parent="." index="7" unique_id=686942527 instance=ExtResource("5_ef08e")]
+position = Vector2(-514, -39)
+
+[node name="Acid" parent="." index="8" unique_id=850766622 instance=ExtResource("6_uq0ek")]
+position = Vector2(-1334, -320)
+scale = Vector2(4.5599804, 2.6800048)

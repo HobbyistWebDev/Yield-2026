@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://codi2rw8grlvl"]
+
+[ext_resource type="Script" uid="uid://b23673esp6vae" path="res://hazards/hurt_box/hurt_box.gd" id="1_c5gyu"]
+
+[node name="HurtBox" type="Area2D" unique_id=448400354]
+script = ExtResource("1_c5gyu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

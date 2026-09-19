@@ -21,3 +21,7 @@ func go_to_next_level():
 func go_to_main_menu():
 	SceneTransition.transition(main_menu_path)
 	current_level = -1
+
+func restart_level(delay=0):
+	await  get_tree().create_timer(delay).timeout
+	get_tree().reload_current_scene()

@@ -102,3 +102,7 @@ func yield_action(rm):
 func _on_timer_timeout() -> void:
 	dir *= -1
 	remaining_time = 1
+
+func die():
+	print(123)
+	LevelManager.restart_level()
