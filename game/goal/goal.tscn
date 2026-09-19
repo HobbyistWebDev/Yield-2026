@@ -1,19 +1,140 @@
 [gd_scene format=3 uid="uid://b6bpmj6kvcjrp"]
 
-[ext_resource type="Texture2D" uid="uid://2nd3eojclqy2" path="res://assets/textures/square.png" id="1_1vsd8"]
 [ext_resource type="Script" uid="uid://cl3nlb6cxiipl" path="res://game/goal/goal.gd" id="1_5iycu"]
+[ext_resource type="Texture2D" uid="uid://ba13e5jcxt6vg" path="res://assets/textures/door.png" id="2_5iycu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsjtf"]
-size = Vector2(32, 32)
+size = Vector2(20, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boqsp"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3j14"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15iwn"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c5k3"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vglf1"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm670"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l27xw"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecrab"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kx8a"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6onlx"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vfeg"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkp54"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pdko"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utxsb"]
+atlas = ExtResource("2_5iycu")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2h45r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boqsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3j14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15iwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c5k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vglf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm670")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l27xw")
+}],
+"loop": 0,
+"name": &"close",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecrab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kx8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6onlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vfeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkp54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pdko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utxsb")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 12.0
+}]
 
 [node name="Goal" type="Area2D" unique_id=322480661]
 script = ExtResource("1_5iycu")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1232812695]
-modulate = Color(1, 1, 0, 1)
-texture = ExtResource("1_1vsd8")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=723002004]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_gsjtf")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1964121911]
+z_index = 2
+scale = Vector2(1, 2)
+sprite_frames = SubResource("SpriteFrames_2h45r")
+animation = &"open"
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2049140217]
+
+[node name="Timer" type="Timer" parent="." unique_id=554952278]
+wait_time = 0.1
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
