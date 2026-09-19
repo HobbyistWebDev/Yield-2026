@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://c4w4j537lranu"]
+
+[ext_resource type="Script" uid="uid://cnbj3na50sdsh" path="res://resources/audio_resources/sound_effect.gd" id="1_e4q5d"]
+[ext_resource type="AudioStream" uid="uid://c3f2bdr0p4pij" path="res://assets/sounds/bump.wav" id="2_tltyc"]
+
+[resource]
+script = ExtResource("1_e4q5d")
+name = &"bump"
+stream = ExtResource("2_tltyc")
+volume_db = -10.0
+metadata/_custom_type_script = "uid://cnbj3na50sdsh"
