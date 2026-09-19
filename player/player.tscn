@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://frghlynbdxs8" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://damcewcp0cs2e" path="res://assets/player_sheet.png" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://c06lrra8dunqy" path="res://particles/run_particle.tscn" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://blcik2nwoyy2r" path="res://particles/blood_particle.tscn" id="4_yw30f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
 atlas = ExtResource("2_rkbax")
@@ -369,5 +370,7 @@ target_position = Vector2(-25, 0)
 [node name="RunParticle" parent="." unique_id=1823042640 instance=ExtResource("3_g1dw6")]
 z_index = -1
 position = Vector2(-1, 31)
+
+[node name="BloodParticle" parent="." unique_id=887532862 instance=ExtResource("4_yw30f")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
