@@ -2,8 +2,88 @@
 
 [ext_resource type="Script" uid="uid://dd6owbxcgw34u" path="res://level_select/level_select.gd" id="1_l7jsa"]
 [ext_resource type="PackedScene" uid="uid://c3fqv0rvm1oas" path="res://level_select/level_tile/LevelTile.tscn" id="2_sv8in"]
+[ext_resource type="Texture2D" uid="uid://ceauaommy66fi" path="res://assets/sprites/level_button_1.png" id="3_mtmfa"]
+[ext_resource type="Texture2D" uid="uid://c676py3r77vmc" path="res://assets/sprites/level_button_1_focus.png" id="4_d5drp"]
+[ext_resource type="Texture2D" uid="uid://ceb3xoyw78l2i" path="res://assets/sprites/level_button_2.png" id="4_lqw5f"]
+[ext_resource type="FontFile" uid="uid://c4ljisvjplahc" path="res://resources/fonts/Jersey25-Regular.ttf" id="4_mgq0h"]
+[ext_resource type="Script" uid="uid://v2lb0vwnjv0d" path="res://level_select/level_button.gd" id="5_ad3wc"]
+[ext_resource type="Texture2D" uid="uid://c8j6sjoi4ptot" path="res://assets/sprites/level_button_3.png" id="5_mgq0h"]
+[ext_resource type="Texture2D" uid="uid://del6k2uljykya" path="res://assets/sprites/level_button_2_focus.png" id="7_ad3wc"]
+[ext_resource type="Texture2D" uid="uid://ba3m3rv5lghb0" path="res://assets/sprites/level_button_3_focus.png" id="9_16arb"]
+
+[sub_resource type="Theme" id="Theme_ri1ak"]
+default_font = ExtResource("4_mgq0h")
+default_font_size = 75
+
+[sub_resource type="Animation" id="Animation_3shxk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bws42"]
+resource_name = "press"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.22531264, 1),
+"update": 0,
+"values": [Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.45062515, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d5drp"]
+_data = {
+&"RESET": SubResource("Animation_3shxk"),
+&"press": SubResource("Animation_bws42")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ad3wc"]
+_data = {
+&"RESET": SubResource("Animation_3shxk"),
+&"press": SubResource("Animation_bws42")
+}
 
 [node name="LevelSelect" type="Control" unique_id=549884391]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,10 +100,111 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -150.0
-offset_right = 150.0
-offset_bottom = 150.0
+offset_left = -216.0
+offset_top = -77.0
+offset_right = 212.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 32
 columns = 10
+
+[node name="Level1" type="TextureButton" parent="GridContainer" unique_id=101517336]
+layout_mode = 2
+offset_transform_enabled = true
+texture_normal = ExtResource("3_mtmfa")
+texture_hover = ExtResource("4_d5drp")
+texture_focused = ExtResource("4_d5drp")
+script = ExtResource("5_ad3wc")
+
+[node name="NumberLabel" type="RichTextLabel" parent="GridContainer/Level1" unique_id=1061013861]
+texture_filter = 1
+layout_mode = 0
+offset_left = 106.0
+offset_top = 104.0
+offset_right = 146.0
+offset_bottom = 180.0
+theme = SubResource("Theme_ri1ak")
+theme_override_constants/outline_size = 12
+text = "1"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer/Level1" unique_id=1513744818]
+libraries/ = SubResource("AnimationLibrary_d5drp")
+
+[node name="Level2" type="TextureButton" parent="GridContainer" unique_id=2134083509]
+layout_mode = 2
+offset_transform_enabled = true
+texture_normal = ExtResource("4_lqw5f")
+texture_hover = ExtResource("7_ad3wc")
+texture_focused = ExtResource("7_ad3wc")
+script = ExtResource("5_ad3wc")
+id = 1
+
+[node name="NumberLabel" type="RichTextLabel" parent="GridContainer/Level2" unique_id=818638828]
+texture_filter = 1
+layout_mode = 0
+offset_left = 105.0
+offset_top = 104.0
+offset_right = 145.0
+offset_bottom = 180.0
+theme = SubResource("Theme_ri1ak")
+theme_override_constants/outline_size = 12
+text = "2"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer/Level2" unique_id=476395008]
+libraries/ = SubResource("AnimationLibrary_ad3wc")
+
+[node name="Level3" type="TextureButton" parent="GridContainer" unique_id=471616132]
+layout_mode = 2
+offset_transform_enabled = true
+texture_normal = ExtResource("5_mgq0h")
+texture_hover = ExtResource("9_16arb")
+texture_focused = ExtResource("9_16arb")
+script = ExtResource("5_ad3wc")
+id = 2
+
+[node name="NumberLabel" type="RichTextLabel" parent="GridContainer/Level3" unique_id=545105786]
+texture_filter = 1
+layout_mode = 0
+offset_left = 108.0
+offset_top = 104.0
+offset_right = 148.0
+offset_bottom = 180.0
+theme = SubResource("Theme_ri1ak")
+theme_override_constants/outline_size = 12
+text = "3"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer/Level3" unique_id=1077226569]
+libraries/ = SubResource("AnimationLibrary_ad3wc")
+
+[node name="InfoLabel" type="RichTextLabel" parent="." unique_id=1050395648]
+texture_filter = 1
+layout_mode = 0
+offset_left = 232.0
+offset_top = 37.0
+offset_right = 930.0
+offset_bottom = 163.0
+theme = SubResource("Theme_ri1ak")
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/normal_font_size = 100
+text = "STAGE SELECT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
