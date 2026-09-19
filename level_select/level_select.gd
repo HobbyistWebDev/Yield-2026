@@ -10,7 +10,7 @@ func _ready() -> void:
 		#grid_container.add_child(new_level_tile)
 	
 	for b:TextureButton in $GridContainer.get_children():
-		b.connect("btn_down", button_pressed)
+		b.connect("press", button_pressed)
 	
 	$GridContainer/Level1.grab_focus()
 
