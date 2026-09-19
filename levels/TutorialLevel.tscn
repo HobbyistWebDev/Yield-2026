@@ -13,7 +13,7 @@ font_size = 75
 
 [node name="MasterLevel" unique_id=803879313 instance=ExtResource("1_ihuc2")]
 
-[node name="Camera2D" parent="." index="1" unique_id=1521111467]
+[node name="GameCamera" parent="." index="1" unique_id=1521111467]
 position = Vector2(-768, 0)
 zoom = Vector2(0.4, 0.4)
 

@@ -372,5 +372,6 @@ z_index = -1
 position = Vector2(-1, 31)
 
 [node name="BloodParticle" parent="." unique_id=887532862 instance=ExtResource("4_yw30f")]
+process_mode = 3
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
