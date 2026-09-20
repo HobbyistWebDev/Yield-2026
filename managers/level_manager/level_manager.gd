@@ -32,7 +32,12 @@ func go_to_level(ind: int):
 func go_to_next_level():
 	if level_records[current_level] > clock_value:
 		level_records[current_level] = clock_value
-	go_to_level(current_level + 1)
+	
+	if current_level == 3:
+		SceneTransition.transition("res://game/win.tscn")
+	else:
+		#go_to_level(current_level + 1)
+		SceneTransition.transition("res://level_select/level_select.tscn")
 
 func go_to_main_menu():
 	SceneTransition.transition(main_menu_path)

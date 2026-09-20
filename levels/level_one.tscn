@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://b4k64myp05je1" path="res://levels/tutorial.gd" id="9_moue2"]
 [ext_resource type="Texture2D" uid="uid://bfbyhmomx6801" path="res://assets/sprites/text_box.png" id="10_7qlxi"]
 [ext_resource type="FontFile" uid="uid://c4ljisvjplahc" path="res://resources/fonts/Jersey25-Regular.ttf" id="11_n054k"]
+[ext_resource type="AudioStream" uid="uid://b38vj08m4ec0a" path="res://assets/music/SlowYourRoll.ogg" id="12_wxr4u"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wmkcm"]
 tile_data = PackedInt32Array(0, 131073, 1, 1, 196609, 1, 2, 262145, 1, 3, 327681, 1)
@@ -262,6 +263,12 @@ sources/1 = SubResource("TileSetAtlasSource_n054k")
 sources/2 = SubResource("TileSetAtlasSource_wxr4u")
 pattern_0 = SubResource("TileMapPattern_wmkcm")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxr4u"]
+size = Vector2(82, 454)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c85u1"]
+size = Vector2(82, 438)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ri1ak"]
 size = Vector2(82, 220)
 
@@ -388,7 +395,7 @@ tile_map_data = PackedByteArray("AAD3//7/AQAAAAAAAAD3//3/AQAAAAAAAAD3//z/AQAAAAA
 
 [node name="GameCamera" parent="." index="6" unique_id=1521111467 groups=["camera"]]
 camera_animation = "tutorial_intro"
-level_name = "TUTORIAL STAGE"
+level_name = "LEVEL 1"
 left_boundary = -300
 right_boundary = 5200
 upper_boundary = -99999
@@ -431,21 +438,21 @@ rotation = -1.5707964
 [node name="Tutorial" type="Node2D" parent="." index="14" unique_id=1607753824]
 position = Vector2(-8, 104)
 script = ExtResource("9_moue2")
-messages = Array[String](["Blinky dashes forward automatically! Hold SPACE to stop the clock, then release it to jump.", "Release SPACE when the power meter is in the RED to perform a Super Jump.", "If you overload the power meter, Blinky will turn around instead of jumping.", "Reach the exit door to complete the stage!"])
+messages = Array[String](["Blinky dashes forward automatically! Hold SPACE to stop him, then release it to jump.", "Release SPACE when the power meter is in the RED to perform a Super Jump.", "If you overload the power meter, Blinky will turn around instead of jumping.", "Reach the exit door to complete the stage!"])
 
 [node name="Check1" type="Area2D" parent="Tutorial" index="0" unique_id=72549579]
 position = Vector2(0, -104)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Check1" index="0" unique_id=1123044515]
-position = Vector2(748, 10)
-shape = SubResource("RectangleShape2D_ri1ak")
+position = Vector2(748, -107)
+shape = SubResource("RectangleShape2D_wxr4u")
 
 [node name="Check2" type="Area2D" parent="Tutorial" index="1" unique_id=283334073]
 position = Vector2(337, -104)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Check2" index="0" unique_id=1890140494]
-position = Vector2(1983, -43)
-shape = SubResource("RectangleShape2D_ri1ak")
+position = Vector2(1983, -152)
+shape = SubResource("RectangleShape2D_c85u1")
 
 [node name="Check3" type="Area2D" parent="Tutorial" index="2" unique_id=1975720983]
 position = Vector2(737, -104)
@@ -489,3 +496,7 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial/InfoBox" index="1" unique_id=208556984]
 libraries/ = SubResource("AnimationLibrary_t2o40")
+
+[node name="BGM" type="AudioStreamPlayer" parent="." index="15" unique_id=1640311617]
+stream = ExtResource("12_wxr4u")
+autoplay = true

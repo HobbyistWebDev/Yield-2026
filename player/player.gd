@@ -52,6 +52,9 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if !can_move:
+		if anim_sprite.animation != "idle_front":
+			AudioManager.play("mini_jump_notify")
+			anim_sprite.animation = "idle_front"
 		return
 	
 	if dir == 1:

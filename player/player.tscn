@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://damcewcp0cs2e" path="res://assets/player_sheet.png" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://c06lrra8dunqy" path="res://particles/run_particle.tscn" id="3_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://blcik2nwoyy2r" path="res://particles/blood_particle.tscn" id="4_yw30f"]
+[ext_resource type="FontFile" uid="uid://c4ljisvjplahc" path="res://resources/fonts/Jersey25-Regular.ttf" id="5_qjkh3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
 atlas = ExtResource("2_rkbax")
@@ -433,6 +434,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17ybg"]
 size = Vector2(32, 39)
 
+[sub_resource type="Theme" id="Theme_g6k8r"]
+default_font = ExtResource("5_qjkh3")
+default_font_size = 75
+
 [node name="Player" type="CharacterBody2D" unique_id=1405235111]
 z_index = 5
 script = ExtResource("1_oul6g")
@@ -462,5 +467,24 @@ position = Vector2(-1, 31)
 
 [node name="BloodParticle" parent="." unique_id=887532862 instance=ExtResource("4_yw30f")]
 process_mode = 3
+
+[node name="InfoLabel" type="RichTextLabel" parent="." unique_id=239937399]
+visible = false
+texture_filter = 1
+offset_left = -176.0
+offset_top = -96.0
+offset_right = 522.0
+offset_bottom = 30.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_g6k8r")
+theme_override_colors/default_color = Color(1, 1, 0.21176471, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/normal_font_size = 100
+text = "STAGE CLEARED!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

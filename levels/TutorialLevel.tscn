@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://d0ylwaxdko30f" path="res://assets/tilesets/tileset.tres" id="2_qn1vs"]
 [ext_resource type="PackedScene" uid="uid://ccugtutw1ldgi" path="res://hazards/spikes.tscn" id="5_ef08e"]
 [ext_resource type="PackedScene" uid="uid://b6bpmj6kvcjrp" path="res://game/goal/goal.tscn" id="5_uq0ek"]
+[ext_resource type="AudioStream" uid="uid://c3g2lsrxr3c1x" path="res://assets/music/BlinkyJapan.ogg" id="6_f0bq1"]
 [ext_resource type="PackedScene" uid="uid://dyh3yjpk4ghi3" path="res://hazards/acid.tscn" id="6_uq0ek"]
 
 [node name="MasterLevel" unique_id=803879313 instance=ExtResource("1_ihuc2")]
@@ -27,7 +28,7 @@ tile_map_data = PackedByteArray("AADE/wEAAgAFAAoAAADE/wIAAgAGAAoAAADE/wMAAgAEAAo
 
 [node name="GameCamera" parent="." index="4" unique_id=1521111467]
 camera_animation = "lv_1_intro"
-level_name = "LEVEL 1"
+level_name = "LEVEL 2"
 left_boundary = -2300
 right_boundary = 625
 upper_boundary = -820
@@ -49,3 +50,7 @@ position = Vector2(-584, 85)
 
 [node name="Goal" parent="." index="9" unique_id=322480661 instance=ExtResource("5_uq0ek")]
 position = Vector2(366, -221)
+
+[node name="BGM" type="AudioStreamPlayer" parent="." index="10" unique_id=634122113]
+stream = ExtResource("6_f0bq1")
+autoplay = true

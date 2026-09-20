@@ -57,15 +57,11 @@ _data = {
 &"wipe_out": SubResource("Animation_x0mw7")
 }
 
-[node name="SceneTransition" type="Control" unique_id=1156947645]
-z_index = 999
-texture_filter = 1
-layout_mode = 3
-anchors_preset = 0
+[node name="SceneTransition" type="CanvasLayer" unique_id=782487139]
+layer = 11
 script = ExtResource("1_1un8b")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1185244247]
-layout_mode = 0
 offset_left = -1158.0
 offset_top = -1029.0
 offset_right = -1117.9999

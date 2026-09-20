@@ -24,7 +24,8 @@ SceneTransition="*uid://dolh1m8ft5eji"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/resizable=false
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [global_group]

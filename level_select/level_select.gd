@@ -15,4 +15,9 @@ func _ready() -> void:
 	$GridContainer/Level1.grab_focus()
 
 func button_pressed(id:int):
+	AudioManager.play("mini_jump_notify")
 	LevelManager.go_to_level(id)
+
+
+func _on_main_menu_button_pressed() -> void:
+	SceneTransition.transition("res://main_menu/main_menu.tscn")
