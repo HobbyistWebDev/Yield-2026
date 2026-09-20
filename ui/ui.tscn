@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://byme1dfrthr3c" path="res://ui/pause_menu/pause_menu.tscn" id="1_nb4k0"]
 [ext_resource type="Texture2D" uid="uid://cfmmyfdcdiheo" path="res://assets/sprites/charge_meter_empty.png" id="2_wl5ax"]
 [ext_resource type="Texture2D" uid="uid://0a473fufeaoe" path="res://assets/sprites/charge_meter_full2.png" id="3_wl5ax"]
+[ext_resource type="PackedScene" uid="uid://bx03te8we5vhx" path="res://ui/speed_score/speed_score.tscn" id="4_vkava"]
 
 [sub_resource type="Animation" id="Animation_vkava"]
 length = 0.001
@@ -145,3 +146,12 @@ texture_progress = ExtResource("3_wl5ax")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ChargeBar" unique_id=1290458062 groups=["charge_bar"]]
 libraries/ = SubResource("AnimationLibrary_obcwv")
+
+[node name="SpeedScore" parent="." unique_id=1332604272 instance=ExtResource("4_vkava")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 82.0
+grow_vertical = 0

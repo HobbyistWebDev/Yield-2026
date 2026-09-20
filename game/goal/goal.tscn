@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cl3nlb6cxiipl" path="res://game/goal/goal.gd" id="1_5iycu"]
 [ext_resource type="Texture2D" uid="uid://ba13e5jcxt6vg" path="res://assets/textures/door.png" id="2_5iycu"]
+[ext_resource type="PackedScene" uid="uid://sa50gw78642e" path="res://particles/evil_particles.tscn" id="3_boqsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsjtf"]
 size = Vector2(20, 60)
@@ -118,6 +119,7 @@ animations = [{
 }]
 
 [node name="Goal" type="Area2D" unique_id=322480661]
+z_index = 4
 script = ExtResource("1_5iycu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=723002004]
@@ -135,6 +137,9 @@ animation = &"open"
 [node name="Timer" type="Timer" parent="." unique_id=554952278]
 wait_time = 0.1
 autostart = true
+
+[node name="EvilParticles" parent="." unique_id=1409789153 instance=ExtResource("3_boqsp")]
+z_as_relative = false
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
