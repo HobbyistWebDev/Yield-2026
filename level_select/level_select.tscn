@@ -209,6 +209,35 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer/Level3" unique_id=1077226569]
 libraries/ = SubResource("AnimationLibrary_ad3wc")
 
+[node name="Level4" type="TextureButton" parent="GridContainer" unique_id=1414618145]
+layout_mode = 2
+offset_transform_enabled = true
+texture_normal = ExtResource("5_mgq0h")
+texture_hover = ExtResource("9_16arb")
+texture_focused = ExtResource("9_16arb")
+script = ExtResource("5_ad3wc")
+id = 4
+
+[node name="NumberLabel" type="RichTextLabel" parent="GridContainer/Level4" unique_id=1197674911]
+texture_filter = 1
+layout_mode = 0
+offset_left = 108.0
+offset_top = 104.0
+offset_right = 148.0
+offset_bottom = 180.0
+theme = SubResource("Theme_ri1ak")
+theme_override_constants/outline_size = 12
+text = "4
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer/Level4" unique_id=1792367310]
+libraries/ = SubResource("AnimationLibrary_ad3wc")
+
 [node name="InfoLabel" type="RichTextLabel" parent="." unique_id=1050395648]
 texture_filter = 1
 layout_mode = 0
