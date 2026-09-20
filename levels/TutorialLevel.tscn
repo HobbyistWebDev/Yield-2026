@@ -14,6 +14,7 @@ texture_filter = 0
 [node name="GameCamera" parent="." index="1" unique_id=1521111467]
 position = Vector2(-768, 0)
 zoom = Vector2(0.4, 0.4)
+camera_animation = "lv_1_intro"
 
 [node name="TileMapLayer" parent="." index="2" unique_id=454834814]
 z_index = 1
