@@ -7,5 +7,5 @@
 script = ExtResource("1_e4q5d")
 name = &"bump"
 stream = ExtResource("2_tltyc")
-volume_db = -10.0
+volume_db = -6.0
 metadata/_custom_type_script = "uid://cnbj3na50sdsh"

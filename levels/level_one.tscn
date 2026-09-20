@@ -6,7 +6,7 @@
 
 [node name="MasterLevel2" unique_id=803879313 instance=ExtResource("1_4h2c1")]
 
-[node name="Camera2D" parent="." index="1" unique_id=1521111467]
+[node name="GameCamera" parent="." index="1" unique_id=1521111467]
 position = Vector2(586, -137)
 zoom = Vector2(0.6, 0.6)
 
