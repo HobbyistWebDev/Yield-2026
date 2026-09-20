@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://c2wi0ly1770c0"]
+
+[ext_resource type="Script" uid="uid://v7im86efp3vh" path="res://game/win.gd" id="1_glh7q"]
+[ext_resource type="AudioStream" uid="uid://rk01d3ax1erd" path="res://assets/music/Timecore.ogg" id="1_h5vub"]
+[ext_resource type="Texture2D" uid="uid://c1o0d551m1wtr" path="res://assets/textures/win_bg.png" id="2_tpl36"]
+[ext_resource type="FontFile" uid="uid://c4ljisvjplahc" path="res://resources/fonts/Jersey25-Regular.ttf" id="3_a8iom"]
+[ext_resource type="Texture2D" uid="uid://dqejy3rcuwf2j" path="res://assets/textures/salad yum.png" id="4_glh7q"]
+[ext_resource type="Texture2D" uid="uid://dmewf2q4wjn2d" path="res://assets/sprites/generic_button_pink.png" id="6_sl4pk"]
+[ext_resource type="Texture2D" uid="uid://d06jr2i1lceep" path="res://assets/sprites/generic_button_pink_focus.png" id="7_enfan"]
+
+[sub_resource type="Theme" id="Theme_sl4pk"]
+default_font = ExtResource("3_a8iom")
+default_font_size = 75
+
+[sub_resource type="Theme" id="Theme_sb283"]
+default_font = ExtResource("3_a8iom")
+default_font_size = 75
+
+[node name="Win" type="Control" unique_id=1712923676]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glh7q")
+
+[node name="BG" type="TextureRect" parent="." unique_id=249994514]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_tpl36")
+
+[node name="InfoLabel" type="RichTextLabel" parent="." unique_id=268740287]
+texture_filter = 1
+layout_mode = 0
+offset_left = 149.0
+offset_top = 37.0
+offset_right = 1013.0
+offset_bottom = 163.0
+theme = SubResource("Theme_sl4pk")
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/normal_font_size = 100
+text = "YOU FOUND THE SALAD"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoLabel2" type="RichTextLabel" parent="." unique_id=1732874378]
+texture_filter = 1
+layout_mode = 0
+offset_left = 150.0
+offset_top = 442.0
+offset_right = 1014.0
+offset_bottom = 568.0
+theme = SubResource("Theme_sl4pk")
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/normal_font_size = 50
+text = "Blinky is happy."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="salad yum" type="TextureRect" parent="." unique_id=1085795712]
+texture_filter = 1
+layout_mode = 0
+offset_left = 367.0
+offset_top = 72.00002
+offset_right = 407.0
+offset_bottom = 112.00001
+scale = Vector2(10, 10)
+texture = ExtResource("4_glh7q")
+
+[node name="MainMenuButton" type="TextureButton" parent="." unique_id=629415339]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 556.0
+offset_right = 575.0
+offset_bottom = 600.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_sl4pk")
+texture_hover = ExtResource("7_enfan")
+texture_focused = ExtResource("7_enfan")
+
+[node name="Text" type="RichTextLabel" parent="MainMenuButton" unique_id=1425618604]
+texture_filter = 1
+layout_mode = 0
+offset_left = -62.0
+offset_top = -17.0
+offset_right = 185.0
+offset_bottom = 59.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.5, 0.5)
+focus_mode = 0
+mouse_filter = 2
+theme = SubResource("Theme_sb283")
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/normal_font_size = 50
+text = "ok"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1917608918]
+stream = ExtResource("1_h5vub")
+pitch_scale = 2.05
+autoplay = true
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

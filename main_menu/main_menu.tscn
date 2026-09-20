@@ -102,7 +102,7 @@ layout_mode = 2
 offset_transform_enabled = true
 texture_normal = ExtResource("1_d3a7t")
 script = ExtResource("1_oa53l")
-level_select_path = "uid://dl0l0fepoa5u8"
+level_select_path = "uid://cb8bcegpbtmwj"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/StartButton" unique_id=1662601557]
 libraries/ = SubResource("AnimationLibrary_3f7m4")

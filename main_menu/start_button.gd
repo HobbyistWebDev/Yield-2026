@@ -6,6 +6,8 @@ func _ready():
 	grab_focus()
 
 func _on_pressed() -> void:
+	AudioManager.play("mini_jump_notify")
 	$AnimationPlayer.play("press")
 	await($AnimationPlayer.animation_finished)
-	SceneTransition.transition(level_select_path)
+	#LevelManager.go_to_level(0)
+	SceneTransition.transition("res://game/intro.tscn")

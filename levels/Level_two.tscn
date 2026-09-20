@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ccugtutw1ldgi" path="res://hazards/spikes.tscn" id="4_0kpd4"]
 [ext_resource type="PackedScene" uid="uid://b6bpmj6kvcjrp" path="res://game/goal/goal.tscn" id="5_l36bc"]
 [ext_resource type="PackedScene" uid="uid://b6sni673i28rb" path="res://hazards/electric_fence/electric_fence.tscn" id="5_ldoij"]
+[ext_resource type="AudioStream" uid="uid://rk01d3ax1erd" path="res://assets/music/Timecore.ogg" id="7_fgyvx"]
+[ext_resource type="Texture2D" uid="uid://dqejy3rcuwf2j" path="res://assets/textures/salad yum.png" id="8_0kpd4"]
 
 [node name="MasterLevel" unique_id=803879313 instance=ExtResource("1_ldoij")]
 
@@ -17,7 +19,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." index="2" unique_id=1405235111]
 z_index = 0
-position = Vector2(-1886, 339)
+position = Vector2(-1882, 417)
 
 [node name="TileMapLayer" parent="." index="3" unique_id=454834814]
 z_index = 1
@@ -26,7 +28,7 @@ tile_map_data = PackedByteArray("AAC//wgAAgACAAoAAADA/wgAAgACAAoAAADB/wgAAgADAAE
 
 [node name="GameCamera" parent="." index="4" unique_id=1521111467]
 camera_animation = "lv_2_intro"
-level_name = "LEVEL 2"
+level_name = "LEVEL 3"
 left_boundary = -2050
 right_boundary = 630
 upper_boundary = -800
@@ -54,3 +56,17 @@ position = Vector2(-216, 501)
 [node name="Acid" parent="." index="11" unique_id=850766622 instance=ExtResource("3_fgyvx")]
 position = Vector2(379, 513)
 scale = Vector2(-12.04138, 3.570792)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="12" unique_id=1959168626]
+stream = ExtResource("7_fgyvx")
+volume_db = -4.094
+autoplay = true
+
+[node name="salad yum" type="TextureRect" parent="." index="13" unique_id=193670352]
+texture_filter = 1
+offset_left = 518.0
+offset_top = -495.0
+offset_right = 558.0
+offset_bottom = -455.0
+scale = Vector2(2, 2)
+texture = ExtResource("8_0kpd4")

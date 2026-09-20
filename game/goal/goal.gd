@@ -14,6 +14,9 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		body.can_move = false
+		body.get_node("InfoLabel").visible = true
+		await(get_tree().create_timer(1.5).timeout)
 		LevelManager.go_to_next_level()
 
 func _on_timer_timeout() -> void:

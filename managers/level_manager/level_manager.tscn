@@ -4,5 +4,5 @@
 
 [node name="LevelManager" type="Node" unique_id=1846327554]
 script = ExtResource("1_57clk")
-level_paths = Array[String](["uid://u2lsh8cy10d0", "res://levels/level_two.tscn", "uid://bdyjdosj2fpxm", "uid://cb8bcegpbtmwj", "uid://cr3xp5f6rhgio", "uid://ce67vp1vgv8cr"])
+level_paths = Array[String](["uid://dl0l0fepoa5u8", "uid://cb8bcegpbtmwj", "uid://u2lsh8cy10d0", "res://levels/level_two.tscn", "uid://bdyjdosj2fpxm", "uid://cr3xp5f6rhgio", "uid://ce67vp1vgv8cr"])
 main_menu_path = "uid://e066t8wdbjpq"

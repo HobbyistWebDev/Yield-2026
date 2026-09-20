@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://c8j6sjoi4ptot" path="res://assets/sprites/level_button_3.png" id="5_mgq0h"]
 [ext_resource type="Texture2D" uid="uid://del6k2uljykya" path="res://assets/sprites/level_button_2_focus.png" id="7_ad3wc"]
 [ext_resource type="Texture2D" uid="uid://ba3m3rv5lghb0" path="res://assets/sprites/level_button_3_focus.png" id="9_16arb"]
+[ext_resource type="Texture2D" uid="uid://dmewf2q4wjn2d" path="res://assets/sprites/generic_button_pink.png" id="12_yqi8v"]
+[ext_resource type="Texture2D" uid="uid://d06jr2i1lceep" path="res://assets/sprites/generic_button_pink_focus.png" id="13_i0e3c"]
+[ext_resource type="AudioStream" uid="uid://bu1uh27apd7qy" path="res://assets/music/YieldMenu.ogg" id="14_i0e3c"]
 
 [sub_resource type="Theme" id="Theme_ri1ak"]
 default_font = ExtResource("4_mgq0h")
@@ -83,6 +86,10 @@ _data = {
 &"press": SubResource("Animation_bws42")
 }
 
+[sub_resource type="Theme" id="Theme_bq1ln"]
+default_font = ExtResource("4_mgq0h")
+default_font_size = 75
+
 [node name="LevelSelect" type="Control" unique_id=549884391]
 texture_filter = 1
 layout_mode = 3
@@ -125,6 +132,7 @@ texture_normal = ExtResource("3_mtmfa")
 texture_hover = ExtResource("4_d5drp")
 texture_focused = ExtResource("4_d5drp")
 script = ExtResource("5_ad3wc")
+id = 1
 
 [node name="NumberLabel" type="RichTextLabel" parent="GridContainer/Level1" unique_id=1061013861]
 texture_filter = 1
@@ -152,7 +160,7 @@ texture_normal = ExtResource("4_lqw5f")
 texture_hover = ExtResource("7_ad3wc")
 texture_focused = ExtResource("7_ad3wc")
 script = ExtResource("5_ad3wc")
-id = 1
+id = 2
 
 [node name="NumberLabel" type="RichTextLabel" parent="GridContainer/Level2" unique_id=818638828]
 texture_filter = 1
@@ -180,7 +188,7 @@ texture_normal = ExtResource("5_mgq0h")
 texture_hover = ExtResource("9_16arb")
 texture_focused = ExtResource("9_16arb")
 script = ExtResource("5_ad3wc")
-id = 2
+id = 3
 
 [node name="NumberLabel" type="RichTextLabel" parent="GridContainer/Level3" unique_id=545105786]
 texture_filter = 1
@@ -217,3 +225,42 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MainMenuButton" type="TextureButton" parent="." unique_id=2124466918]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 532.0
+offset_right = 147.0
+offset_bottom = 576.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("12_yqi8v")
+texture_hover = ExtResource("13_i0e3c")
+texture_focused = ExtResource("13_i0e3c")
+
+[node name="Text" type="RichTextLabel" parent="MainMenuButton" unique_id=240446957]
+texture_filter = 1
+layout_mode = 0
+offset_left = -62.0
+offset_top = -17.0
+offset_right = 185.0
+offset_bottom = 59.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.5, 0.5)
+focus_mode = 0
+mouse_filter = 2
+theme = SubResource("Theme_bq1ln")
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/normal_font_size = 50
+text = "Back"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1057341117]
+stream = ExtResource("14_i0e3c")
+autoplay = true
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
