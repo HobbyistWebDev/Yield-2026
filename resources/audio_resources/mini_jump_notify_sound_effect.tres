@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cip502pc8irfu"]
+
+[ext_resource type="Script" uid="uid://cnbj3na50sdsh" path="res://resources/audio_resources/sound_effect.gd" id="1_5c16n"]
+[ext_resource type="AudioStream" uid="uid://cliy3vc60yyxw" path="res://assets/sounds/mini_jump_notify.wav" id="2_wiep5"]
+
+[resource]
+script = ExtResource("1_5c16n")
+name = &"mini_jump_notify"
+stream = ExtResource("2_wiep5")
+volume_db = -8.0
+metadata/_custom_type_script = "uid://cnbj3na50sdsh"
