@@ -20,6 +20,8 @@ class_name GameCamera
 @export var left_boundary:int
 ## Camera's maximum X position
 @export var right_boundary:int
+@export var upper_boundary:int
+@export var lower_boundary:int
 ## Max speed to follow the player
 @export var follow_speed = 2.5
 
@@ -40,6 +42,8 @@ func _ready() -> void:
 	
 	limit_left = left_boundary
 	limit_right = right_boundary
+	limit_top = upper_boundary
+	limit_bottom = lower_boundary
 	$LevelName.text = level_name
 	
 	#$AnimationPlayer.play(camera_animations[LevelManager.current_level])
@@ -58,6 +62,9 @@ func _process(delta: float) -> void:
 			new_pos.x -= 300
 		position = position.lerp(new_pos, delta * follow_speed)
 	
+	$LevelName.global_position = get_screen_center_position() - Vector2(400, 0)
+	$Ready.global_position = get_screen_center_position() - Vector2(400, 0)
+	$Start.global_position = get_screen_center_position() - Vector2(600, 0)
 	
 	if trauma > 0.0:
 		trauma = max(trauma - decay_rate * delta, 0.0)
