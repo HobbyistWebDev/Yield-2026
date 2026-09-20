@@ -11,6 +11,24 @@ class_name GameCamera
 ## Frequency speed of the jitter (Higher = fast violent vibration)
 @export var noise_speed: float = 120.0
 
+@export_category("Camera Settings")
+## Animation name for the level intro.
+@export var camera_animation:String
+## Text to display for the level name in the intro.
+@export var level_name:String = ""
+## Camera's minimum X position.
+@export var left_boundary:int
+## Camera's maximum X position
+@export var right_boundary:int
+@export var upper_boundary:int
+@export var lower_boundary:int
+## Max speed to follow the player
+@export var follow_speed = 2.5
+
+@onready var player:Player = get_tree().get_first_node_in_group("player")
+
+var follow:bool = false
+
 var trauma: float = 0.0
 var noise: FastNoiseLite
 var noise_y: float = 0.0
@@ -21,8 +39,33 @@ func _ready() -> void:
 	noise.seed = randi()
 	# High frequency creates sharp, violent directional shifts instead of smooth motion
 	noise.frequency = 0.5
+	
+	limit_left = left_boundary
+	limit_right = right_boundary
+	limit_top = upper_boundary
+	limit_bottom = lower_boundary
+	$LevelName.text = level_name
+	
+	#$AnimationPlayer.play(camera_animations[LevelManager.current_level])
+	$AnimationPlayer.play(camera_animation)
+	await($AnimationPlayer.animation_finished)
+	player.can_move = true
+	follow = true
+	$AnimationPlayer.play("start")
 
 func _process(delta: float) -> void:
+	if follow:
+		var new_pos:Vector2 = player.position
+		if player.dir == 1:
+			new_pos.x += 300
+		else:
+			new_pos.x -= 300
+		position = position.lerp(new_pos, delta * follow_speed)
+	
+	$LevelName.global_position = get_screen_center_position() - Vector2(400, 0)
+	$Ready.global_position = get_screen_center_position() - Vector2(400, 0)
+	$Start.global_position = get_screen_center_position() - Vector2(600, 0)
+	
 	if trauma > 0.0:
 		trauma = max(trauma - decay_rate * delta, 0.0)
 		_apply_shake(delta)

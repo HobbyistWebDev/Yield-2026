@@ -7,7 +7,9 @@
 [ext_resource type="Resource" uid="uid://dkqy80l3dur52" path="res://resources/audio_resources/jump_sound_effect.tres" id="5_p4ovy"]
 [ext_resource type="Resource" uid="uid://c4w4j537lranu" path="res://resources/audio_resources/bump.tres" id="6_ipktg"]
 [ext_resource type="Resource" uid="uid://bx34a8ht1xvbh" path="res://resources/audio_resources/death_sound_effect.tres" id="7_adrch"]
+[ext_resource type="Resource" uid="uid://cip502pc8irfu" path="res://resources/audio_resources/mini_jump_notify_sound_effect.tres" id="8_10hmo"]
+[ext_resource type="Resource" uid="uid://d25pkerh6htky" path="res://resources/audio_resources/mega_jump_notify_sound_effect.tres" id="9_d3360"]
 
 [node name="AudioManager" type="Node" unique_id=261972966]
 script = ExtResource("1_4fkx4")
-sounds = Array[ExtResource("2_rp2ad")]([ExtResource("3_ebsk8"), ExtResource("4_ebsk8"), ExtResource("5_p4ovy"), ExtResource("6_ipktg"), ExtResource("7_adrch")])
+sounds = Array[ExtResource("2_rp2ad")]([ExtResource("3_ebsk8"), ExtResource("4_ebsk8"), ExtResource("5_p4ovy"), ExtResource("6_ipktg"), ExtResource("7_adrch"), ExtResource("8_10hmo"), ExtResource("9_d3360")])

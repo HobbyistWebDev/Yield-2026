@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bx03te8we5vhx"]
+
+[ext_resource type="Script" uid="uid://dc73x8qk0mcpg" path="res://ui/speed_score/speed_score.gd" id="1_6hxgs"]
+[ext_resource type="FontFile" uid="uid://c4ljisvjplahc" path="res://resources/fonts/Jersey25-Regular.ttf" id="2_6bx77"]
+
+[node name="SpeedScore" type="VBoxContainer" unique_id=1332604272]
+offset_transform_enabled = true
+offset_transform_position = Vector2(20, -20)
+script = ExtResource("1_6hxgs")
+
+[node name="CurrentLabel" type="Label" parent="." unique_id=437214066]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6bx77")
+theme_override_font_sizes/font_size = 24
+text = "CURRENT: "
+
+[node name="FastestLabel" type="Label" parent="." unique_id=555999210]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6bx77")
+theme_override_font_sizes/font_size = 24
+text = "FASTEST: "

@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dbxuibs27un48" path="res://assets/textures/new_desert_tiles.png" id="3_wmkcm"]
 [ext_resource type="Texture2D" uid="uid://bl1igmjnxybxw" path="res://assets/textures/new decorations.png" id="4_3cnh5"]
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_wmkcm"]
+tile_data = PackedInt32Array(0, 131073, 1, 1, 196609, 1, 2, 262145, 1, 3, 327681, 1)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_innw0"]
 texture = ExtResource("1_rlrdu")
 texture_region_size = Vector2i(32, 32)
@@ -277,3 +280,4 @@ sources/0 = SubResource("TileSetAtlasSource_innw0")
 sources/1 = SubResource("TileSetAtlasSource_wmkcm")
 sources/2 = SubResource("TileSetAtlasSource_3cnh5")
 sources/3 = SubResource("TileSetAtlasSource_ywg6y")
+pattern_0 = SubResource("TileMapPattern_wmkcm")
