@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://diuj40vdbd62i"]
+
+[ext_resource type="Texture2D" uid="uid://dqejy3rcuwf2j" path="res://assets/textures/salad yum.png" id="1_2t5dn"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=191912408]
+texture = ExtResource("1_2t5dn")
