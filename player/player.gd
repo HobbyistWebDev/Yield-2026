@@ -1,8 +1,12 @@
 extends CharacterBody2D
 class_name Player
 
+@export var can_move:bool = false
+
 @onready var timer: Timer = $Timer
 @onready var blood_particle: CPUParticles2D = $BloodParticle
+@export var is_tutorial:bool = false
+
 
 var horizontal_speed = 500
 var gravity = 3000
@@ -34,8 +38,12 @@ var orig_scale = 0
 func _ready():
 	orig_scale = anim_sprite.scale.x
 	game_camera = get_tree().current_scene.get_node("GameCamera")
+	anim_sprite.play("idle_front")
 
 func _physics_process(delta: float) -> void:
+	if !can_move:
+		return
+	
 	if dir == 1:
 		anim_sprite.scale.x = orig_scale
 		run_particle.direction.x = -1
@@ -112,9 +120,14 @@ func _on_timer_timeout() -> void:
 	remaining_time = 1
 
 func die():
+	game_camera.shake(5000)
+	AudioManager.play("death")
+	
+	if is_tutorial:
+		position = Vector2(3300, -130)
+		return
+	
 	blood_particle.emitting = true
 	anim_sprite.visible = false
 	LevelManager.restart_level(1)
-	game_camera.shake(5000)
-	AudioManager.play("death")
 	process_mode = Node.PROCESS_MODE_DISABLED
