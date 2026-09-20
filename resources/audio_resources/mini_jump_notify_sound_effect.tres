@@ -7,5 +7,5 @@
 script = ExtResource("1_5c16n")
 name = &"mini_jump_notify"
 stream = ExtResource("2_wiep5")
-volume_db = -5.0
+volume_db = -8.0
 metadata/_custom_type_script = "uid://cnbj3na50sdsh"
