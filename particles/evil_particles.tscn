@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://sa50gw78642e"]
+
+[ext_resource type="Texture2D" uid="uid://2nd3eojclqy2" path="res://assets/textures/square.png" id="1_w8erw"]
+
+[node name="EvilParticles" type="CPUParticles2D" unique_id=1409789153]
+amount = 50
+texture = ExtResource("1_w8erw")
+emission_shape = 1
+emission_sphere_radius = 64.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+radial_accel_min = -100.0
+scale_amount_min = 0.6
+color = Color(0, 0, 0, 1)
