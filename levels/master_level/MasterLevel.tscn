@@ -429,6 +429,34 @@ tracks/7/keys = {
 "values": [Vector2(2, 2), Vector2(0.2, 0.2)]
 }
 
+[sub_resource type="Animation" id="Animation_p734i"]
+resource_name = "lv_4_intro"
+length = 3.2333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1700, 400), Vector2(-750, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.65, 0.65)]
+}
+
 [sub_resource type="Animation" id="Animation_2883v"]
 resource_name = "start"
 length = 0.6
@@ -575,6 +603,7 @@ _data = {
 &"lv_1_intro": SubResource("Animation_j5pjc"),
 &"lv_2_intro": SubResource("Animation_lmyu2"),
 &"lv_3_intro": SubResource("Animation_roe47"),
+&"lv_4_intro": SubResource("Animation_p734i"),
 &"start": SubResource("Animation_2883v"),
 &"tutorial_intro": SubResource("Animation_cg3og")
 }

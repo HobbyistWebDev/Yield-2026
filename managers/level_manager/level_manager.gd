@@ -33,7 +33,7 @@ func go_to_next_level():
 	if level_records[current_level] > clock_value:
 		level_records[current_level] = clock_value
 	
-	if current_level == 3:
+	if current_level == 4:
 		SceneTransition.transition("res://game/win.tscn")
 	else:
 		#go_to_level(current_level + 1)
