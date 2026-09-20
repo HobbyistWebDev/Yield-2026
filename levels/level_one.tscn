@@ -391,6 +391,8 @@ camera_animation = "tutorial_intro"
 level_name = "TUTORIAL STAGE"
 left_boundary = -300
 right_boundary = 5200
+upper_boundary = -99999
+lower_boundary = 300
 
 [node name="Goal" parent="." index="7" unique_id=322480661 instance=ExtResource("3_nxahq")]
 texture_filter = 1
@@ -442,7 +444,7 @@ shape = SubResource("RectangleShape2D_ri1ak")
 position = Vector2(337, -104)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Check2" index="0" unique_id=1890140494]
-position = Vector2(1986, -17)
+position = Vector2(1983, -43)
 shape = SubResource("RectangleShape2D_ri1ak")
 
 [node name="Check3" type="Area2D" parent="Tutorial" index="2" unique_id=1975720983]
